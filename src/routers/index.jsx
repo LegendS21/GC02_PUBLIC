@@ -8,13 +8,18 @@ const url = "https://h8-phase2-gc.vercel.app";
 
 const router = createBrowserRouter([
   {
-    path: "/",
-    element: <HomePage url={url} />,
-  },
+    element: <BaseLayout />,
+    children: [
+      {
+        path: "/",
+        element: <HomePage url={url} />,
+      },
 
-  {
-    path: "/detail/:id",
-    element: <Detail url={url} />,
+      {
+        path: "/detail/:id",
+        element: <Detail url={url} />,
+      },
+    ],
   },
 ]);
 export default router;
